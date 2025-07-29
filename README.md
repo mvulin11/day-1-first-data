@@ -1,12 +1,14 @@
-Day 1 First Data - Financial Analysis Projects
+**Day 1 First Data - Financial Analysis Projects**
 This repository contains my Jupyter notebook projects focused on financial data analysis and trading strategies.
+
 📁 Projects
 1. Day 1 First Data (day-1-first-data.ipynb)
-[Add a brief description of what this notebook does - e.g., "Initial exploration of stock market data, basic data cleaning and visualization"]
+Initial exploration of stock market data, basic data cleaning and visualization
 2. Moving Averages Analysis (Day-1-moving-averages.ipynb)
-[Add description - e.g., "Implementation and analysis of moving average trading strategies using historical stock data"]
+Implementation and analysis of moving average trading strategies using historical stock data
 3. Backtesting Strategy (day-2-backtesting.ipynb)
-[Add description - e.g., "Backtesting framework for evaluating trading strategy performance over historical periods"]
+Backtesting framework for evaluating trading strategy performance over historical periods
+
 🛠️ Requirements
 To run these notebooks, you'll need:
 bashpip install pandas numpy matplotlib seaborn jupyter
@@ -26,9 +28,8 @@ bashjupyter lab
 Open any of the .ipynb files to explore the analysis
 
 📊 Data Sources
-[Mention where your data comes from - e.g., "Stock data sourced from Yahoo Finance API" or "Historical price data from Alpha Vantage"]
-📈 Key Findings
-[Optional: Add a brief summary of interesting discoveries or results from your analysis]
+Stock data sourced from Yahoo Finance API
+
 🔄 Future Work
 
  Add more technical indicators
