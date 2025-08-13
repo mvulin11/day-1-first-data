@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Options Profit Tracker</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>Options Profit Tracker</h1>
+    <nav>
+      <button class="tab-btn active" data-tab="add">Add Trade</button>
+      <button class="tab-btn" data-tab="portfolio">Portfolio</button>
+      <button class="tab-btn" data-tab="trades">Trades</button>
+    </nav>
+  </header>
+
+  <main>
+    <section id="tab-add" class="tab active">
+      <form id="trade-form">
+        <div class="grid">
+          <label>
+            <span>Symbol</span>
+            <input type="text" id="symbol" required />
+          </label>
+          <label>
+            <span>Type</span>
+            <select id="option_type">
+              <option value="C">C</option>
+              <option value="P">P</option>
+            </select>
+          </label>
+          <label>
+            <span>Strike</span>
+            <input type="number" id="strike" step="0.01" min="0" required />
+          </label>
+          <label>
+            <span>Expiry</span>
+            <input type="date" id="expiry" required />
+          </label>
+        </div>
+        <div class="grid">
+          <label>
+            <span>Action</span>
+            <select id="action">
+              <option>BTO</option>
+              <option>STO</option>
+              <option>STC</option>
+              <option>BTC</option>
+            </select>
+          </label>
+          <label>
+            <span>Quantity</span>
+            <input type="number" id="quantity" min="1" step="1" value="1" required />
+          </label>
+          <label>
+            <span>Price</span>
+            <input type="number" id="price" step="0.01" min="0" required />
+          </label>
+          <label>
+            <span>Fees</span>
+            <input type="number" id="fees" step="0.01" min="0" value="0" />
+          </label>
+        </div>
+        <div class="grid">
+          <label>
+            <span>Group ID</span>
+            <input type="number" id="group_id" min="0" />
+          </label>
+          <label>
+            <span>Trade time</span>
+            <input type="datetime-local" id="trade_datetime" required />
+          </label>
+          <label class="full">
+            <span>Note</span>
+            <input type="text" id="note" />
+          </label>
+        </div>
+        <input type="hidden" id="edit_id" />
+        <div class="actions">
+          <button type="submit" id="submit-btn">Add Trade</button>
+          <button type="button" id="cancel-edit" class="secondary">Cancel Edit</button>
+        </div>
+      </form>
+    </section>
+
+    <section id="tab-portfolio" class="tab">
+      <div class="metrics">
+        <div class="metric"><div class="label">Total realized P/L</div><div id="metric-realized" class="value">$0.00</div></div>
+        <div class="metric"><div class="label">Open contracts</div><div id="metric-open-contracts" class="value">0</div></div>
+        <div class="metric"><div class="label">Trades count</div><div id="metric-trade-count" class="value">0</div></div>
+      </div>
+
+      <h3>Realized events</h3>
+      <div id="realized-table" class="table"></div>
+
+      <h3>Open positions</h3>
+      <div id="open-table" class="table"></div>
+
+      <h3>Unrealized P/L (enter marks)</h3>
+      <div id="marks-table" class="table"></div>
+      <div class="metric-row">
+        <div class="metric"><div class="label">Total unrealized P/L</div><div id="metric-unrealized" class="value">$0.00</div></div>
+      </div>
+    </section>
+
+    <section id="tab-trades" class="tab">
+      <div class="toolbar">
+        <button id="export-csv">Export CSV</button>
+        <label class="file-input">
+          Import CSV
+          <input type="file" id="import-csv" accept=".csv" />
+        </label>
+      </div>
+      <div id="trades-table" class="table"></div>
+      <div class="grid compact">
+        <label>
+          <span>Trade ID</span>
+          <input type="number" id="edit-trade-id" min="1" />
+        </label>
+        <button id="load-for-edit">Load for edit</button>
+        <button id="delete-trade" class="danger">Delete</button>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <small>Local storage only. Multiplier 100x. FIFO matching.</small>
+  </footer>
+  <script src="main.js"></script>
+</body>
+</html>
