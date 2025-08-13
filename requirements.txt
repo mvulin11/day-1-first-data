@@ -1,0 +1,5 @@
+# Optional dependency for live quotes
+# You can run the tool without installing this
+# pip install -r requirements.txt
+
+yfinance>=0.2.40
