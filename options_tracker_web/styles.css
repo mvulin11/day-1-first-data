@@ -1,0 +1,33 @@
+* { box-sizing: border-box; }
+body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; color: #0f172a; background: #f8fafc; }
+header { background: white; border-bottom: 1px solid #e2e8f0; padding: 12px 20px; position: sticky; top: 0; z-index: 10; }
+h1 { margin: 0 0 8px 0; font-size: 20px; }
+nav { display: flex; gap: 8px; }
+.tab-btn { padding: 8px 12px; border: 1px solid #cbd5e1; background: #fff; border-radius: 8px; cursor: pointer; }
+.tab-btn.active { background: #0ea5e9; color: white; border-color: #0284c7; }
+main { padding: 16px 20px; max-width: 1100px; margin: 0 auto; }
+.grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 12px; }
+.grid.compact { grid-template-columns: repeat(6, 1fr); align-items: end; }
+label { display: flex; flex-direction: column; gap: 6px; font-size: 14px; }
+label.full { grid-column: 1 / -1; }
+input, select, button { padding: 8px; border: 1px solid #cbd5e1; border-radius: 8px; font-size: 14px; background: white; }
+button { cursor: pointer; }
+button.secondary { background: #eef2ff; border-color: #c7d2fe; }
+button.danger { background: #fee2e2; border-color: #fecaca; }
+.tab { display: none; }
+.tab.active { display: block; }
+.actions { display: flex; gap: 8px; }
+.metrics { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 16px; }
+.metric { background: white; border: 1px solid #e2e8f0; border-radius: 12px; padding: 12px; }
+.metric .label { color: #64748b; font-size: 12px; }
+.metric .value { font-size: 18px; font-weight: 600; }
+.table { background: white; border: 1px solid #e2e8f0; border-radius: 12px; overflow: auto; }
+.table table { width: 100%; border-collapse: collapse; }
+.table thead { background: #f1f5f9; }
+.table th, .table td { padding: 8px 10px; border-bottom: 1px solid #e2e8f0; font-size: 13px; text-align: left; }
+.table tr:last-child td { border-bottom: none; }
+.toolbar { margin-bottom: 10px; display: flex; gap: 10px; align-items: center; }
+.file-input { position: relative; overflow: hidden; display: inline-block; }
+.file-input input { position: absolute; left: 0; top: 0; opacity: 0; width: 100%; height: 100%; cursor: pointer; }
+footer { padding: 12px 20px; text-align: center; color: #64748b; }
+@media (max-width: 900px) { .grid { grid-template-columns: 1fr 1fr; } .metrics { grid-template-columns: 1fr; } }
