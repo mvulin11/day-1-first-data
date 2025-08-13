@@ -1,0 +1,4 @@
+__pycache__/
+*.pyc
+options_tracker.db
+.env
